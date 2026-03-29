@@ -1,0 +1,44 @@
+INPUT	PROMPT TYPE	FORMAT	PROMPT	OUTPUT	SCORE	ISSUE	
+I want to cancel my subscription	basic		Classify the user intent: I want to cancel my subscription	The user intent for the phrase "I want to cancel my subscription" is classified as Cancellation (specifically under Subscription Management or Churn).Here is a breakdown of the intent classification:CategoryClassificationPrimary IntentCancellationSub-IntentSubscription Termination / Account ClosureSentimentNegative or Neutral (Transactional)UrgencyMedium to High (usually time-sensitive due to billing cycles)Contextual NuancesDepending on the system processing this, the intent might trigger several automated workflows:Retention Flow: Offering a discount or "pause" option to prevent the user from leaving.Instructional Flow: Providing a step-by-step guide on how to navigate to the billing settings.Feedback Collection: Asking for the reason behind the cancellation (e.g., "too expensive," "no longer needed").Would you like me to help you draft a cancellation email or a script for a customer service bot to handle this request?	PASS	Too verbose	DONE
+I want to cancel my subscription	short	label	Classify the user intent in ONE short label only: I want to cancel my subscription	Cancellation	PASS		DONE
+I need help updating my payment method	basic		Classify the user intent: I need help updating my payment method				NOT RUN
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
+			Classify the user intent: 				
