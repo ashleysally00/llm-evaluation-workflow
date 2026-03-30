@@ -5,7 +5,7 @@ This project demonstrates a structured workflow for evaluating LLM outputs.
 
 The goal is to move from subjective judgment to repeatable, measurable evaluation.
 
-View the full evaluation sheet (including formulas and scoring logic):
+View the full evaluation sheet (including formulas and scoring logic):  
 [Google Sheets](https://docs.google.com/spreadsheets/d/1CdNGnFg9NNCkMsi3x-WZ0bDqAIAitCfNEJnj1avaS84/edit?usp=sharing)
 
 ---
