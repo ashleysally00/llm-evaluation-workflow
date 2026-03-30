@@ -10,6 +10,21 @@ View the full evaluation sheet (including formulas and scoring logic):
 
 ---
 
+## Automation
+
+This workflow includes a simple script (`run_eval.py`) that automates prompt execution using the Gemini API.
+
+The script:
+- Reads inputs from a structured CSV file
+- Sends prompts to the model programmatically
+- Writes model outputs back to a new CSV file for evaluation
+
+This removes the need for manual copy/paste and enables batch evaluation at scale.
+
+Note: API keys are stored securely using environment variables (`.env`) and are not included in this repository.
+
+---
+
 ## Workflow
 
 1. Input → user query  
