@@ -1,25 +1,30 @@
 # LLM Evaluation Workflow
 
 ## Overview
-This project demonstrates a structured workflow for evaluating LLM outputs.
+This project provides a structured workflow for evaluating and comparing LLM outputs across multiple models.
 
-The goal is to automate repeatable steps in the evaluation workflow by identifying components that can be executed programmatically.
+The core problem it solves: **manually copy/pasting prompts into multiple models is tedious and error-prone.** By scripting prompt execution across APIs, outputs can be collected systematically and evaluated using a consistent framework.
 
-View the full evaluation sheet (including formulas and scoring logic):  
-[Google Sheets](https://docs.google.com/spreadsheets/d/1CdNGnFg9NNCkMsi3x-WZ0bDqAIAitCfNEJnj1avaS84/edit?usp=sharing)
+View the full evaluation sheet: __Google Sheets__
+> Note: Scoring logic and aggregation formulas are in progress.
 
 ---
 
 ## Automation
 
-This workflow includes a simple script (`run_eval.py`) that automates prompt execution using the Gemini API.
+Two scripts send the same prompts to different models programmatically:
 
-The script:
-- Reads inputs from a structured CSV file
-- Sends prompts to the model programmatically
-- Writes model outputs back to a new CSV file for evaluation
+| Script | Model | Description |
+|--------|-------|-------------|
+| `run_prompts.py` | Gemini 2.5 Flash | Sends prompts to Gemini API |
+| `run_prompts_claude.py` | Claude Haiku | Sends prompts to Anthropic API |
 
-This removes the need for manual copy/paste and enables batch evaluation at scale.
+Both scripts:
+- Read inputs from the same `Prompt Set.csv` file
+- Send each prompt to the model via API
+- Write model outputs to a new CSV file for evaluation
+
+This enables side-by-side model comparison without manual copy/paste.
 
 Note: API keys are stored securely using environment variables (`.env`) and are not included in this repository.
 
@@ -27,55 +32,48 @@ Note: API keys are stored securely using environment variables (`.env`) and are 
 
 ## Workflow
 
-1. Input → user query  
-2. Prompt → instruction given to the model  
-3. Output → model response  
-4. Evaluation:  
-   - Assign PASS / FAIL  
-   - Tag issues using predefined categories  
+1. **Input** → user query
+2. **Prompt** → instruction given to the model
+3. **Output** → model response (collected automatically via script)
+4. **Evaluation**:
+   - Assign PASS / FAIL
+   - Tag issues using predefined categories
 
 ---
 
 ## Issue Taxonomy
 
-- Too verbose  
-- Wrong classification  
-- Format incorrect  
-- Missing information  
-- Hallucination  
+- Too verbose
+- Wrong classification
+- Format incorrect
+- Missing information
+- Hallucination
 
 ---
 
 ## Metrics
 
 Outputs are analyzed using simple aggregation:
+- Count of each issue type
+- Percentage of total failures
 
-- Count of each issue type  
-- Percentage of total failures  
-
-Example insight:  
-- 50% of outputs were too verbose → indicates a need for tighter prompt constraints  
+Example insight:
+> 50% of outputs were too verbose → indicates a need for tighter prompt constraints
 
 ---
 
-## Why this matters
+## Why This Matters
 
-This approach enables:
-
-- Consistent evaluation across outputs  
-- Identification of dominant failure patterns  
-- Data-driven prompt iteration  
+Manual evaluation of LLM outputs is inconsistent and doesn't scale. This workflow introduces:
+- **Automation** — prompt execution across multiple models without copy/paste
+- **Consistency** — same prompts, same evaluation criteria across models
+- **Comparability** — structured output enables side-by-side model analysis
+- **Iteration** — failure patterns inform prompt improvements
 
 ---
 
 ## Example
 
 | Input | Prompt | Output | Issue |
-|------|--------|--------|-------|
+|-------|--------|--------|-------|
 | I want to cancel | Classify intent | "The user intent is..." | Too verbose |
-
----
-
-## Takeaway
-
-Instead of evaluating outputs ad hoc, this workflow introduces structure, repeatability, and basic quantitative analysis.
